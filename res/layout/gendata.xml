@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gendata_title"
+            android:id="@+id/gendata_title"
+            android:layout_gravity="center_horizontal"
+            />
+
+    <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+        <TableRow>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/gen_name"
+                    android:id="@+id/gen_name"
+                    android:layout_gravity="bottom|center_horizontal"/>
+
+            <EditText
+                    android:id="@+id/gen_name_edit"
+                    android:width="100dp"
+                    android:maxLines="1"
+                    android:maxWidth="100dp"/>
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/gen_date"
+                    android:id="@+id/gen_date"
+                    android:layout_gravity="bottom|center_horizontal"/>
+
+            <EditText
+                    android:id="@+id/gen_date_edit"
+                    android:width="100dp"
+                    android:maxLines="1"
+                    android:maxWidth="100dp"/>
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/gen_time"
+                    android:id="@+id/gen_time"
+                    android:layout_gravity="bottom|center_horizontal"/>
+
+            <EditText
+                    android:id="@+id/gen_time_edit"
+                    android:width="100dp"
+                    android:maxLines="1"
+                    android:maxWidth="100dp"/>
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/gen_weather"
+                    android:id="@+id/gen_weather"
+                    android:layout_gravity="bottom|center_horizontal"/>
+
+            <EditText
+                    android:id="@+id/gen_weather_edit"
+                    android:width="100dp"
+                    android:maxLines="1"
+                    android:maxWidth="100dp"
+                    android:minWidth="100dp"/>
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/gen_temp"
+                    android:id="@+id/gen_temp"
+                    android:layout_gravity="bottom|center_horizontal"/>
+
+            <EditText
+                    android:id="@+id/gen_temp_edit"
+                    android:width="100dp"
+                    android:maxLines="1"
+                    android:maxWidth="100dp"
+                    android:minWidth="100dp"/>
+        </TableRow>
+
+    </TableLayout>
+
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/gen_button"
+            android:text="@string/equip_cont"
+            android:layout_gravity="center"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/gen_error"
+            android:layout_gravity="center_horizontal"
+            />
+</LinearLayout>

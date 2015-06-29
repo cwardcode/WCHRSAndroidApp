@@ -1,4 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">GroundwaterCollection</string>
+    <string name="splash_title">Groundwater Rounds Tool</string>
+    <string name="equip_title">Equipment Checklist</string>
+    <string name="equip_bucket">Bucket</string>
+    <string name="equip_foldRuler">Folding Ruler</string>
+    <string name="equip_levelTape">Water Level Tape</string>
+    <string name="equip_wellKey">Well Key</string>
+    <string name="equip_pen">Pen to write</string>
+    <string name="equip_cont">Continue</string>
+    <string name="gendata_title">General Data:</string>
+    <string name="gen_name">Names:</string>
+    <string name="gen_date">Date:</string>
+    <string name="gen_time">Time:</string>
+    <string name="gen_weather">Weather:</string>
+    <string name="gen_temp">Temperature (F):</string>
 </resources>
