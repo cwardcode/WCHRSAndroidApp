@@ -10,8 +10,11 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
+import java.io.File;
+
 public class GroundWaterMain extends Activity
 {
+    public File outputFile;
     CheckBox bucket;
     CheckBox ruler;
     CheckBox levelTape;
@@ -57,23 +60,23 @@ public class GroundWaterMain extends Activity
         boolean allChecked = true;
         if (!bucket.isChecked()) {
             allChecked = false;
-            missedFields = missedFields + "Bucket\n";
+            missedFields += "Bucket\n";
         }
         if (!ruler.isChecked()) {
             allChecked = false;
-            missedFields = missedFields + "Folding Ruler\n";
+            missedFields += "Folding Ruler\n";
         }
         if (!levelTape.isChecked()) {
             allChecked = false;
-            missedFields = missedFields + "Water Level Tape\n";
+            missedFields += "Water Level Tape\n";
         }
         if (!wellKey.isChecked()) {
             allChecked = false;
-            missedFields = missedFields + "Well key\n";
+            missedFields += "Well key\n";
         }
         if (!pen.isChecked()) {
             allChecked = false;
-            missedFields = missedFields + "Pen\n";
+            missedFields += "Pen\n";
         }
         return allChecked;
     }

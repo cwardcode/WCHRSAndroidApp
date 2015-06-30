@@ -1,6 +1,7 @@
 package edu.wcu.wchrs.android.GroundwaterCollection;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -35,15 +36,18 @@ public class GroundWaterGenData extends Activity {
         title.setTextSize(getResources().getDimension(R.dimen.textsize));
         error = (TextView) findViewById(R.id.gen_error);
 
-        names = (TextView) findViewById(R.id.gen_name_edit);
         date = (TextView) findViewById(R.id.gen_date_edit);
         date.setText(getCurrentDate());
         date.setEnabled(false);
+
         time = (TextView) findViewById(R.id.gen_time_edit);
         time.setText(getCurrentTime());
         time.setEnabled(false);
+
+        names = (TextView) findViewById(R.id.gen_name_edit);
         weather = (TextView) findViewById(R.id.gen_weather_edit);
         temp = (TextView) findViewById(R.id.gen_temp_edit);
+
         contButton = (Button) findViewById(R.id.gen_button);
         contButton.setOnClickListener(new OnClickListener() {
             @Override
@@ -53,15 +57,47 @@ public class GroundWaterGenData extends Activity {
                     error.setText(emptyFields);
                     error.setTextColor(Color.RED);
                 } else {
+                    /*
+                    TODO: port this from app to android
+                    Iterator<Row> rowIterator = GroundWaterMain.sheet.rowIterator();
+                    while(rowIterator.hasNext()) {
+                        Row row = rowIterator.next();
+                        Iterator<Cell> cellIterator = row.cellIterator();
+                        while(cellIterator.hasNext()){
+                            Cell curCell = cellIterator.next();
+                            if(curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("Name:")) {
+                                curCell.setCellValue(curCell.getStringCellValue() + " " + names.getText());
+                            }
+                            if(curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("Date:")) {
+                                curCell.setCellValue(curCell.getStringCellValue() + " " + date.getText());
+                            }
+                            if(curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("Time:")) {
+                                curCell.setCellValue(curCell.getStringCellValue() + " " + time.getText());
+                            }
+                            if(curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("Weather:")) {
+                                curCell.setCellValue(curCell.getStringCellValue() + " " + weather.getText());
+                            }
+                            if(curCell.getCellType() == Cell.CELL_TYPE_STRING && curCell.getStringCellValue().equals("Temperature:")) {
+                                curCell.setCellValue(curCell.getStringCellValue() + " " + temp.getText());
+                            }
+
+                        }
+                    }
+                    FileOutputStream fos = new FileOutputStream(GroundWaterMain..outputFile);
+                    GroundWaterMain.book.write(fos);
+                    System.out.println("Written to: " + GroundWaterMain.outputFile.getAbsolutePath());
+                    */
                     error.setText("Names: " + names.getText() + "\n" + "Date: " + date.getText() + "\n" + "Time: "
                             + time.getText() + "\n" + "Weather: " + weather.getText() + "\n" + "Temp: " + temp.getText() + "\n");
                     error.setTextColor(Color.GREEN);
+
+                    goToNextScreen();
                 }
             }
         });
     }
 
-    public boolean emptyFieldsExist() {
+    private boolean emptyFieldsExist() {
         boolean empty = false;
         if (names.getText().toString().trim().equals("")) {
             empty = true;
@@ -78,15 +114,21 @@ public class GroundWaterGenData extends Activity {
         return empty;
     }
 
-    public String getCurrentTime() {
+    private String getCurrentTime() {
         DateFormat dateFormat = new SimpleDateFormat("hh:mm a");
         Date date = new Date();
         return dateFormat.format(date);
     }
 
-    public String getCurrentDate() {
+    private String getCurrentDate() {
         DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
         Date date = new Date();
         return dateFormat.format(date);
+    }
+
+    private void goToNextScreen() {
+        Intent nextActivity = new Intent(getApplicationContext(), GroundWaterGenData.class);
+        startActivity(nextActivity);
+        finish();
     }
 }

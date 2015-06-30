@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="poi-3.12-20150511">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../WCHRSApp/libraries/poi-3.12-20150511.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../WCHRSApp/libraries/poi-ooxml-3.12-20150511.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../WCHRSApp/libraries/poi-ooxml-schemas-3.12-20150511.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../WCHRSApp/libraries/xmlbeans-2.6.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

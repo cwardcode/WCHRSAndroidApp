@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.widget.TextView;
 
 /**
@@ -22,7 +21,6 @@ public class GroundWaterSplash extends Activity {
         title.setTextSize(getResources().getDimension(R.dimen.textsize));
         title.setText(R.string.splash_title);
 
-        Log.d("Splash", "Inside Splash!");
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
